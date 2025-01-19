@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-zinc-900">
+    <div class="mt-5 mb-10">
+        <a class="text-blue-700 ml-5" href="/">back to home</a>
+    </div>
+  <div class="w-screen overflow-hidden flex flex-col justify-center items-center">
+   <form action="/edit/result" method="post" class="">
+   <div class="flex gap-3">
+    <label for="oldName" class="text-white ml-2 ">old name</label>
+    <input type="text" class="rounded-lg w-96 h-12 bg-transparent border border-zinc-700 text-white pl-3" name="oldName" id="" value="<%= filename %> " readonly/>
+   </div>
+<div class="flex gap-3 mt-5">
+    <label for="newName" class="text-white ml-2 ">new name</label>
+    <input type="text" class="rounded-lg w-96 h-12 bg-transparent border border-zinc-700 text-white" name="newName" id="" placeholder=" Enter new name"/>
+</div>
+    <div class="flex justify-center items-center mt-8">
+        <button type="submit" class="items-center self-center border justify-center  text-white border-zinc-700 bg-transparent rounded-md h-12 w-24 flex">submit</button>
+    </div>
+   </form>
+    
+  </div>
+</body>
+</html>

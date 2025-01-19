@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-zinc-900 ">
+    <div class="w-screen flex flex-col mt-20  justify-center items-center overflow-hidden">
+        <form action="/create" method="post" class="flex flex-col w-[600px]" >
+            <label class="text-zinc-700" for="title">tital</label>
+            <input name="title"  type="text" class="bg-transparent text-white rounded-md border border-zinc-700 " id=""  placeholder=" tital"/>
+
+            <label class="text-zinc-700 mt-6" for="description">description</label>
+            <textarea name="description" id="" class="bg-transparent text-white rounded-md border border-zinc-700" cols="30" rows="10" placeholder=" description"></textarea>
+
+            <button type="submit" class="bg-transparent h-12 text-center flex justify-center items-center self-center w-24 border border-zinc-700 mt-8 hover:bg-blue-500 transition duration-700 rounded-md text-white">submit</button>
+        </form>
+
+ <div class="flex  flex-wrap gap-5 mt-9 ml-5 w-screen">
+        <% file.forEach((value)=>{ %>
+            
+                <div class="h-24 w-60 bg-zinc-800 text-black  rounded-md flex justify-center items-center flex-col">
+                  <h1 class="text-white text-2xl"><%= value.slice(0,-4) %></h1>
+                  <div class="flex justify-between w-60 mt-5">
+                      <a href="/DataFiles/delete/<%= value %>" class="text-red-800 text-lg self-start ml-4 " aria-label="delete the file">Delete</a>
+                    <a href="/DataFiles/<%= value %>" class="text-blue-800 text-lg self-end mr-4" aria-label="See more data files">see more</a>
+                    <a href="/DataFiles/edit/<%= value %>" class="text-gray-500 text-lg self-end mr-4" aria-label="edits">edit</a>
+                  </div>
+                </div>
+            
+       <% }) %>
+ </div>
+    </div>
+</body>
+</html>
